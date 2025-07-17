@@ -93,3 +93,41 @@ ul {
 li {
   margin-bottom: 8px;
 }
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-link {
+  background-color: #ecf0f1;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+  transition: background 0.3s;
+}
+
+.tab-link:hover {
+  background-color: #bdc3c7;
+}
+
+.tab-link.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0 0 5px 5px;
+  min-height: 200px;
+}
+
+.tab-content.active {
+  display: block;
+}
