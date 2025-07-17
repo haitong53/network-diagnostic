@@ -21,13 +21,9 @@
     <!-- Tab Contents -->
     <div id="ip-info" class="tab-content active">
       <h2>📍 Thông tin IP hiện tại</h2>
-      <p>Hiện tại bạn chưa tích hợp API lấy IP công cộng.<br>Hãy xem ví dụ mô phỏng:</p>
-      <pre>
-IP: 192.0.2.1<br>
-Quốc gia: Việt Nam<br>
-Thành phố: TP.HCM<br>
-ISP: VNPT
-      </pre>
+      <p>Đang tải thông tin IP...</p>
+      <pre id="ip-result">Kết quả sẽ hiển thị ở đây.</pre>
+      <button onclick="fetchIPInfo()">Lấy lại IP</button>
     </div>
 
     <div id="ping-domain" class="tab-content">
