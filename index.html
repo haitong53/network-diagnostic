@@ -1,24 +1,60 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Kiểm tra mạng nội bộ</title>
+  <title>Chẩn đoán mạng LAN</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Kiểm tra & Chẩn đoán mạng nội bộ</h1>
-    
-    <section>
-      <h2>Bước 1: Lấy thông tin mạng</h2>
-      <p>Mở Command Prompt (CMD) và gõ lệnh:</p>
-      <code>ipconfig /all</code>
-      <textarea id="ipconfigResult" placeholder="Dán kết quả vào đây"></textarea>
-      <button onclick="parseIPConfig()">Phân tích</button>
-    </section>
 
-    <section id="result"></section>
+  <div class="container">
+    <h1>🔍 Chẩn đoán mạng LAN</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event, 'ip-info')">IP Hiện Tại</button>
+      <button class="tab-link" onclick="openTab(event, 'ping-domain')">Ping Domain/IP</button>
+      <button class="tab-link" onclick="openTab(event, 'domain-ip')">IP của Domain</button>
+      <button class="tab-link" onclick="openTab(event, 'ping-dns')">Ping DNS</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div id="ip-info" class="tab-content active">
+      <h2>📍 Thông tin IP hiện tại</h2>
+      <p>Hiện tại bạn chưa tích hợp API lấy IP công cộng.<br>Hãy xem ví dụ mô phỏng:</p>
+      <pre>
+IP: 192.0.2.1<br>
+Quốc gia: Việt Nam<br>
+Thành phố: TP.HCM<br>
+ISP: VNPT
+      </pre>
+    </div>
+
+    <div id="ping-domain" class="tab-content">
+      <h2>🌐 Nhập domain hoặc IP để ping</h2>
+      <input type="text" placeholder="Ví dụ: google.com hoặc 142.251.42.78" />
+      <button>Ping</button>
+      <pre class="result">Kết quả ping sẽ hiển thị ở đây...</pre>
+    </div>
+
+    <div id="domain-ip" class="tab-content">
+      <h2>🔗 Nhập tên miền để tìm IP</h2>
+      <input type="text" placeholder="Ví dụ: google.com" />
+      <button>Tra cứu</button>
+      <pre class="result">IP sẽ hiển thị ở đây...</pre>
+    </div>
+
+    <div id="ping-dns" class="tab-content">
+      <h2>📡 Ping DNS Server</h2>
+      <select>
+        <option value="8.8.8.8">Google DNS (8.8.8.8)</option>
+        <option value="1.1.1.1">Cloudflare DNS (1.1.1.1)</option>
+        <option value="114.114.114.114">114 DNS (Trung Quốc)</option>
+      </select>
+      <button>Ping</button>
+      <pre class="result">Kết quả sẽ hiển thị ở đây...</pre>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
