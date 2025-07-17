@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kiểm tra mạng nội bộ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Kiểm tra & Chẩn đoán mạng nội bộ</h1>
+    
+    <section>
+      <h2>Bước 1: Lấy thông tin mạng</h2>
+      <p>Mở Command Prompt (CMD) và gõ lệnh:</p>
+      <code>ipconfig /all</code>
+      <textarea id="ipconfigResult" placeholder="Dán kết quả vào đây"></textarea>
+      <button onclick="parseIPConfig()">Phân tích</button>
+    </section>
+
+    <section id="result"></section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
