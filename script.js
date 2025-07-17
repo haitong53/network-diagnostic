@@ -17,3 +17,25 @@ function parseIPConfig() {
     resultDiv.innerHTML = `<p>❌ Không tìm thấy thông tin mạng hợp lệ. Hãy chắc chắn bạn đã dán đúng kết quả từ ipconfig.</p>`;
   }
 }
+
+function openTab(evt, tabName) {
+  // Ẩn tất cả tab content
+  const tabs = document.getElementsByClassName("tab-content");
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove("active");
+    tabs[i].style.display = "none";
+  }
+
+  // Bỏ active tất cả tab link
+  const links = document.getElementsByClassName("tab-link");
+  for (let i = 0; i < links.length; i++) {
+    links[i].classList.remove("active");
+  }
+
+  // Hiển thị tab được chọn
+  document.getElementById(tabName).classList.add("active");
+  document.getElementById(tabName).style.display = "block";
+
+  // Thêm active cho tab link
+  evt.currentTarget.classList.add("active");
+}
