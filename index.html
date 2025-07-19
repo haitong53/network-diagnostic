@@ -20,10 +20,32 @@
 
     <!-- Tab Contents -->
     <div id="ip-info" class="tab-content active">
-      <h2>📍 Thông tin IP hiện tại</h2>
-      <p>Đang tải thông tin IP...</p>
-      <pre id="ip-result">Kết quả sẽ hiển thị ở đây.</pre>
-      <button onclick="fetchIPInfo()">Lấy lại IP</button>
+      <h2>📍 Thông tin mạng nội bộ</h2>
+      <p>Vì lý do bảo mật, trình duyệt không thể truy cập trực tiếp thông tin mạng nội bộ. Hãy làm theo các bước sau:</p>
+    
+      <section>
+        <h3>1. Lấy thông tin IP & Subnet</h3>
+        <code>ipconfig</code> (Windows) hoặc <code>ifconfig</code> (Linux/Mac)
+        <textarea id="ipconfigResult" placeholder="Dán kết quả ở đây..."></textarea>
+        <button onclick="parseIPConfig()">Phân tích</button>
+      </section>
+    
+      <section>
+        <h3>2. Kiểm tra DNS</h3>
+        <code>ipconfig /all</code> (Windows) hoặc <code>cat /etc/resolv.conf</code> (Linux)
+        <pre id="dnsResult">DNS Server sẽ hiển thị ở đây...</pre>
+      </section>
+    
+      <section>
+        <h3>3. Kiểm tra Gateway Mặc Định</h3>
+        <code>ip route show default</code> (Linux/Mac) hoặc <code>route PRINT</code> (Windows)
+        <pre id="gatewayResult">Default Gateway sẽ hiển thị ở đây...</pre>
+      </section>
+    
+      <section id="parsedResult">
+        <h3>🔍 Kết quả phân tích</h3>
+        <pre id="parsedOutput">Kết quả sẽ hiển thị sau khi bạn dán và nhấn Phân tích.</pre>
+      </section>
     </div>
 
     <div id="ping-domain" class="tab-content">
